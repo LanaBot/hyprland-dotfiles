@@ -1,0 +1,13 @@
+width=1920
+height=1080
+columns=1
+location=center
+show=drun
+allow_markup=true
+prompt=
+hide_search=true
+hide_scroll=true
+content_halign=center
+orientation=horizontal
+halign=center
+valign=center

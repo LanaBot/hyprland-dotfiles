@@ -1,0 +1,165 @@
+{
+  "layer": "top",
+  "height": 20,
+  "modules-left": [
+    "clock"
+    // "hyprland/window"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  
+  "modules-right": [
+    "tray",
+    "hyprland/language",
+    "group/connections",
+    // "group/info",
+    "battery"
+  ],
+
+  "group/info": {
+    "orientation": "inherit",
+    "modules": ["cpu", "custom/separator", "memory", "custom/separator", "temperature"]
+  },
+
+  "group/connections": {
+    "orientation": "inherit",
+    "modules": ["pulseaudio", "custom/separator", "bluetooth", "custom/separator", "network"]
+  },
+
+  "custom/separator": {
+    "format": " | ",
+    "interval": "once",
+    "tooltip": false
+  },
+  
+  "clock": {
+    "interval": 30,
+    "format": "{:%I:%M %p | %a, %d %b}",
+    "tooltip": false
+  },
+  
+  "hyprland/window": {
+    "format": "<span color='#b4f9f8'>󱕷</span> {title}",
+    "max-length": 20,
+    "separate-outputs": false,
+    "rewrite": {
+      "^.*( - Vivaldi)$": "<span color='#f7768e'>󰌀</span> Vivaldi",
+      "^.*( — Dolphin)$": "<span color='#2ac3de'>󱢴</span> Dolphin",
+      "^.*~$": "<span color='#bb9af7'>󰄛</span> Kitty",
+      "(.*) ": "󱕕",
+      "^.*( - Code - OSS)$": "<span color='#7dcfff'></span> Code"
+    },
+    "tooltip-format": "{title}"
+  },
+
+  "temperature": {
+    "format": "<span color='#b4f9f8'>{icon}</span> {temperatureC}°C",
+    "format-critical": "<span color='#f7768e'>{icon}</span> {temperatureC}°C",
+    "format-icons": ["", "", ""],
+    "critical-threshold": 80,
+    "tooltip": false,
+    "on-click": "kitty --title btop sh -c 'btop'"
+   },
+  "cpu": {
+    "format": "<span color='#b4f9f8'></span> {usage}%",
+    "tooltip": false,
+    "on-click": "kitty --title btop sh -c 'btop'"
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{used:0.1f}/{total:0.1f}<span color='#b4f9f8'>G</span>",
+    "tooltip-format": "{percentage}%",
+    "tooltip": true,
+    "on-click": "kitty --title btop sh -c 'btop'"
+  },
+
+  "hyprland/language": {
+    "format-en": "En",
+    "format-et": "Ee", 
+    "format-ka": "Ge",
+    "on-click": "hyprctl switchxkblayout current next",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "headphone": "<span color='#b4f9f8'></span>",
+      "hands-free": "<span color='#b4f9f8'></span>",
+      "headset": "<span color='#b4f9f8'></span>",
+      "phone": "<span color='#b4f9f8'></span>",
+      "portable": "<span color='#b4f9f8'></span>",
+      "car": "<span color='#b4f9f8'></span>",
+      "default": [
+        "<span color='#b4f9f8'></span>",
+        "<span color='#b4f9f8'></span>",
+        "<span color='#b4f9f8'>󰕾</span>", 
+        "<span color='#b4f9f8'></span>"
+      ]
+    },
+    "format-muted": "<span color='#f7768e'>󰸈</span>",
+    "max-volume": 100,
+    "scroll-step": 1,
+    "tooltip": false
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "󰂯",
+    "format-connected": "󰂱",
+    "tooltip-format": "{device_alias}",
+    "max-length": 6,
+    "on-click": "blueman-manager"
+  },
+  "network": {
+    "format": "{icon}",
+    "format-icons": {
+      "wifi": ["󰤥"],
+      "ethernet": ["󰈁"],
+      "disconnected": [""]
+    },
+    "format-wifi": "󰤥",
+    "format-ethernet": "󰈁",
+    "format-disconnected": "󰤭",
+    "format-linked": "󰈁",
+    "tooltip-format": "{essid}"
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "format-time": "{H}:{m}",
+    "format-icons": [
+      "<span color='#f7768e'>󰁺</span>",
+      "<span color='#f7768e'>󰁻</span>",
+      "<span color='#f7768e'>󰁼</span>",
+      "<span color='#f7768e'>󰁽</span>",
+      "<span color='#b4f9f8'>󰁾</span>",
+      "<span color='#b4f9f8'>󰁿</span>",
+      "<span color='#b4f9f8'>󰂀</span>",
+      "<span color='#b4f9f8'>󰂁</span>",
+      "<span color='#b4f9f8'>󰂂</span>",
+      "<span color='#b4f9f8'>󰁹</span>"
+    ],
+    "format-discharging": "{icon} {capacity}% ({time})",
+    "format-charging": "<span color='#73dacb'>󰂄</span> {capacity}%",
+    "format": "{icon} {capacity}%",
+    "tooltip-format": "{time}",
+    "on-click": "kitty --title btop sh -c 'btop'"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+        "*": 5 
+    },
+    "tooltip": false
+  }
+}

@@ -1,0 +1,126 @@
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+  background: rgba(0,0,0, 0);
+  color: #c0caf5;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16px;
+  padding: 2px;
+}
+
+/* Each module */
+/* #battery,
+#clock,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#language,
+#bluetooth,
+#mic,
+#sound {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 0 0 4px 4px;
+  background-color: rgba(65, 72, 104, 0.2);
+} */
+
+#window,
+#clock,
+#tray,
+#language,
+#connections,
+#info,
+#battery {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 0 0 4px 4px;
+  background-color: rgba(65, 72, 104, 0.2);
+}
+
+/* Module-specific styles */
+#clock {
+  font-weight: bold;
+}
+
+#network {
+  padding-right: 5px;
+}
+
+#network,
+#bluetooth {
+  color: #b4f9f8;
+  font-weight: bold;
+}
+
+#language {
+  font-weight: bold;
+}
+
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+  color: #f7768e;
+}
+
+#bluetooth.connected{
+  color: #73dacb;
+}
+
+#window {
+  font-weight: bold;
+}
+
+#custom-separator {
+  color: #565f89;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inherit;
+}
+
+#workspaces {
+  background-color: rgba(65, 72, 104, 0.2);
+  border-radius: 0 0 4px 4px;
+  margin-right: 5px;
+}
+
+#workspaces button {
+  color: #c0caf5;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(0,0,0,0);
+  font-weight: bold;
+}
+
+#workspaces button.hover {
+  background-color: inherit;
+  color: inherit;
+}
+
+#workspaces button.active {
+  background-color: #b4f9f8;
+  color: #414868;
+}
