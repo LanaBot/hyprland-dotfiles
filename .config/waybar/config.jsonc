@@ -2,11 +2,12 @@
   "layer": "top",
   "height": 20,
   "modules-left": [
+    "custom/dotfiles",
     "clock"
-    // "hyprland/window"
   ],
   "modules-center": [
     "hyprland/workspaces"
+    // "hyprland/window"
   ],
   
   "modules-right": [
@@ -14,7 +15,8 @@
     "hyprland/language",
     "group/connections",
     // "group/info",
-    "battery"
+    "battery",
+    "custom/powermenu"
   ],
 
   "group/info": {
@@ -32,10 +34,17 @@
     "interval": "once",
     "tooltip": false
   },
+
+  "custom/dotfiles": {
+    "interval": "once",
+    "format": "",
+    "on-click": "exec ~/.config/wofi-dotfiles/wofi-dotfiles.sh",
+    "tooltip": false
+  },
   
   "clock": {
     "interval": 30,
-    "format": "{:%I:%M %p | %a, %d %b}",
+    "format": " {:%I:%M %p | %a, %d %b}",
     "tooltip": false
   },
   
@@ -153,12 +162,26 @@
     "on-click": "kitty --title btop sh -c 'btop'"
   },
 
+  "custom/powermenu": {
+    "interval": "once",
+    "format": "",
+    "on-click": "exec ~/.config/wofi-powermenu/powermenu.sh",
+    "tooltip": false
+  },
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "sort-by-number": true,
     "persistent-workspaces": {
         "*": 5 
+    },
+    "active-only": false,
+    "all-outputs": true,
+	  "format-icons": {
+      "active": "<span font='12'>󰮯</span>",
+      "empty": "",
+      "default": "󰊠"
     },
     "tooltip": false
   }
