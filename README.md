@@ -4,7 +4,7 @@ my arch hyprland dotfiles so I am not stranded the next time Nvidia :  ) breaks 
 
 ## packages to install
 
-`sudo pacman -S hyprpaper hypridle hyprlock hyprpicker hyprshot imv vlc krita thunar ttf-jetbrains-mono-nerd telegram-desktop btop blueman git`
+`sudo pacman -S hyprpaper hypridle hyprlock hyprpicker hyprshot imv vlc krita nautilus ttf-jetbrains-mono-nerd telegram-desktop btop bluetui impala wiremix git`
 
 ### yay install
 
