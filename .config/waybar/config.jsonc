@@ -114,7 +114,8 @@
     "format-muted": "<span color='#f7768e'>󰸈</span>",
     "max-volume": 100,
     "scroll-step": 1,
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "kitty -e wiremix"
   },
   "bluetooth": {
     "format": "󰂯",
@@ -124,7 +125,7 @@
     "format-connected": "󰂱",
     "tooltip-format": "{device_alias}",
     "max-length": 6,
-    "on-click": "blueman-manager"
+    "on-click": "kitty -e bluetui"
   },
   "network": {
     "format": "{icon}",
@@ -137,7 +138,8 @@
     "format-ethernet": "󰈁",
     "format-disconnected": "󰤭",
     "format-linked": "󰈁",
-    "tooltip-format": "{essid}"
+    "tooltip-format": "{essid}",
+    "on-click": "kitty -e impala"
   },
   "battery": {
     "bat": "BAT0",
