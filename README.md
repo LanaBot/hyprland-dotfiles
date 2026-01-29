@@ -17,3 +17,13 @@ my arch hyprland dotfiles so I am not stranded the next time Nvidia :  ) breaks 
 4. `makepkg -si`
 
 5. `yay -S code` (or code-oss)
+
+### GTK theming
+
+1. `gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'`
+
+2. `gsettings set org.gnome.desktop.interface document-font-name 'JetBrainsMono Nerd Font 12'`
+
+3. `gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'`
+
+4. `gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'`
